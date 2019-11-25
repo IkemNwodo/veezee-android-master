@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448551024835",
+    "firebase_url": "https://veezee-music.firebaseio.com",
+    "project_id": "veezee-music",
+    "storage_bucket": "veezee-music.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448551024835:android:1d024428cb8452e88e4a76",
+        "android_client_info": {
+          "package_name": "cloud.veezee.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "448551024835-flk535pvvja45cagi9gc1hthuh72m33l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cloud.veezee.android",
+            "certificate_hash": "4a44a720b11c1dbd6e84fb43b8cbbd177ec5b207"
+          }
+        },
+        {
+          "client_id": "448551024835-jfcje3ialgjuaqjrp4ui2t0oetudag9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbrYkHDF2Ao_ULeQGz8uFHcG2vE5p3ULI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "448551024835-jfcje3ialgjuaqjrp4ui2t0oetudag9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

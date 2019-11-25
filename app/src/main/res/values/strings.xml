@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">veezee</string>
+    <string name="notificationChannelName">Music Player Controls</string>
+    <string name="title_activity_setting">SettingActivity</string>
+
+    <string name="submit">Submit</string>
+    <string name="loading">Please wait...</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="login_google">Login with Google</string>
+    <string name="login">Login</string>
+    <string name="register">Create new account</string>
+    <string name="guest_login">Guest Login</string>
+    <string name="create_playlist">Create new Playlist</string>
+
+    <string name="google_error">Google sign in is not available right now. Please use email to sign in/sign up.</string>
+    <string name="request_failed">Something went wrong. Try again later.</string>
+    <string name="expired">Your account is expired</string>
+    <string name="title_activity_albums_track_list">AlbumsTrackListActivity</string>
+</resources>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/panel_child"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F96262"
+    android:clickable="true"
+    android:focusable="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="cloud.veezee.android.activities.BaseActivity">
+
+    <!--<ImageView
+        android:id="@+id/player_blur_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:tint="#6F000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <ImageView
+        android:id="@+id/player_logo"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/player_artwork"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight=".5"
+        tools:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:id="@+id/bottom_player_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_player_guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_player_controller_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_weight="1"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/bottom_player_controller_prev"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPrev"
+                android:src="@drawable/ic_ios_rewind"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/bottom_player_controller_play"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/bottom_player_controller_play"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPlay"
+                android:src="@drawable/ic_play"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/bottom_player_controller_prev"
+                app:layout_constraintRight_toLeftOf="@+id/bottom_player_controller_next"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/bottom_player_controller_pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPause"
+                android:src="@drawable/ic_pause"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/bottom_player_controller_prev"
+                app:layout_constraintRight_toLeftOf="@+id/bottom_player_controller_next"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/bottom_player_controller_next"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="2dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioNext"
+                android:src="@drawable/ic_ios_fastforward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/bottom_player_controller_play"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_player_seek_bar_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <SeekBar
+                android:id="@+id/bottom_player_seek"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:progressBackgroundTint="?attr/primaryText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bottom_player_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="270dp"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bottom_player_seek"
+                tools:text="The Transition of Mali" />
+
+
+            <TextView
+                android:id="@+id/bottom_player_timer_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="15dp"
+                android:text="00:00"
+                android:textColor="?attr/primaryText"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bottom_player_seek" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottom_player_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="55dp" />
+
+    <cloud.veezee.android.externalComponentsAndLibs.SquareImage
+        android:id="@+id/player_artwork"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/controller_container"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_logo"
+        app:layout_constraintVertical_weight="2"
+        tools:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/player_arrow_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:alpha="1"
+        android:src="@drawable/ic_arrow_drop_down_circle"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_player_container" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/controller_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_artwork">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player_seek_bar_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/player_controller_container"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/player_title_container"
+            app:layout_constraintVertical_chainStyle="spread">
+
+            <SeekBar
+                android:id="@+id/player_seek"
+                android:layout_width="0dp"
+                android:layout_height="18dp"
+                android:background="@null"
+                android:clickable="true"
+                android:focusable="true"
+                android:progressBackgroundTint="?attr/primaryText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/player_timer_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="2dp"
+                android:text="00:00"
+                android:textColor="?attr/primaryText"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_seek" />
+
+            <TextView
+                android:id="@+id/player_timer_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="15dp"
+                android:text="00:00"
+                android:textColor="?attr/primaryText"
+                android:textSize="12sp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player_seek" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player_title_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/player_seek_bar_container"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.39">
+
+            <TextView
+                android:id="@+id/player_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxWidth="270dp"
+                android:maxLines="1"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.25"
+                tools:text="The Transition of Mali" />
+
+            <TextView
+                android:id="@+id/player_artist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="middle"
+                android:gravity="center"
+                android:maxWidth="190dp"
+                android:singleLine="true"
+                android:textColor="?attr/primaryText"
+                android:textSize="17sp"
+                app:layout_constraintLeft_toLeftOf="@+id/player_title"
+                app:layout_constraintRight_toRightOf="@+id/player_title"
+                app:layout_constraintTop_toBottomOf="@+id/player_title"
+                tools:text="Mali Music" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player_controller_container"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_player_controller"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_seek_bar_container">
+
+            <!-- <ImageView
+                android:id="@+id/controller_repeat"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:onClick="audioRepeat"
+                android:src="@drawable/ic_repeat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toRightOf="@+id/controller_next"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <ImageView
+                android:id="@+id/controller_prev"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPrev"
+                android:src="@drawable/ic_ios_rewind"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/controller_play"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/controller_play"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPlay"
+                android:src="@drawable/ic_play"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/controller_prev"
+                app:layout_constraintRight_toLeftOf="@+id/controller_next"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/controller_pause"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioPause"
+                android:src="@drawable/ic_pause"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/controller_prev"
+                app:layout_constraintRight_toLeftOf="@+id/controller_next"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/controller_next"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="audioNext"
+                android:src="@drawable/ic_ios_fastforward"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/controller_play"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--<ImageView
+                android:id="@+id/controller_shuffle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:onClick="audioShuffle"
+                android:src="@drawable/ic_shuffle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/controller_prev"
+                app:layout_constraintTop_toTopOf="parent" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/player_volume_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/player_controller_container">
+
+            <ImageView
+                android:id="@+id/player_min_volume"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_volume_low"
+                app:layout_constraintBottom_toBottomOf="@+id/player_volume_seek"
+                app:layout_constraintRight_toLeftOf="@+id/player_volume_seek"
+                app:layout_constraintTop_toTopOf="@id/player_volume_seek" />
+
+            <SeekBar
+                android:id="@+id/player_volume_seek"
+                android:layout_width="150dp"
+                android:layout_height="18dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:progressBackgroundTint="?attr/primaryText"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/player_max_volume"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_volume_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/player_volume_seek"
+                app:layout_constraintLeft_toRightOf="@+id/player_volume_seek"
+                app:layout_constraintTop_toTopOf="@id/player_volume_seek" />
+
+            <ProgressBar
+                android:id="@+id/player_buffer_loading"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:progressBackgroundTint="?attr/primaryText"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout> -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

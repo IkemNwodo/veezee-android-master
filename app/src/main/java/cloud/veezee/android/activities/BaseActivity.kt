@@ -206,6 +206,7 @@ open class BaseActivity : AppCompatActivity() {
         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
             currentPosition = progress;
             timerLeft?.text = formatTime(currentPosition);
+            bottomPlayerTimerRight?.text = formatTime(currentPosition)
         }
 
         override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -522,14 +523,14 @@ open class BaseActivity : AppCompatActivity() {
 
     private fun applyTheme(theme: Theme): Int {
         return when (theme) {
-            Theme.PURPLE_DARK -> {
-                R.style.PurpleDark
+            Theme.UNKNOWN -> {
+                R.style.Unknown
             }
-            Theme.BLACK -> {
-                R.style.Black
+            Theme.UNKNOWN_SECOND -> {
+                R.style.UnknownSecond
             };
-            Theme.WHITE -> {
-                R.style.White
+            Theme.UNKNOWN_THIRD -> {
+                R.style.UnknownThird
             };
         }
     }
@@ -664,7 +665,7 @@ open class BaseActivity : AppCompatActivity() {
         if (now() > App.autoLoginSessionExpireDate && Constants.GUEST_MODE == false)
             checkUserLogin();
 
-//        if(!checkPermissionForReadExtertalStorage()) {
+//        if(!checkPermissionForReadExternalStorage()) {
 //            showNeedForExternalStorageDialog();
 //        }
     }
@@ -849,7 +850,7 @@ open class BaseActivity : AppCompatActivity() {
                     playerSeek?.max = max;
                     bottomPlayerSeek?.max = max;
                     timerRight?.text = formatTime(max);
-                    bottomPlayerTimerRight?.text = formatTime(max)
+                    //bottomPlayerTimerRight?.text = formatTime(max)
 
                     if (!dragging) {
                         //playerProgress?.progress = position.toInt();

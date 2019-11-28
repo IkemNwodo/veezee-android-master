@@ -61,21 +61,21 @@ class ThemeFragment : BottomSheetDialogFragment() {
         radioBlack.isChecked = true;
 
         when(Constants.THEME) {
-            Theme.WHITE -> radioWhite.isChecked = true;
-            Theme.BLACK -> radioBlack.isChecked = true;
-            Theme.PURPLE_DARK -> radioPurpleDark.isChecked = true;
+            Theme.UNKNOWN_SECOND -> radioWhite.isChecked = true;
+            Theme.UNKNOWN_THIRD -> radioBlack.isChecked = true;
+            Theme.UNKNOWN -> radioPurpleDark.isChecked = true;
         }
 
         radioGroup?.setOnCheckedChangeListener { _, checkedId ->
             when(checkedId) {
                 radioBlack.id -> {
-                    setTheme(Theme.BLACK);
+                    setTheme(Theme.UNKNOWN_THIRD);
                 }
                 radioPurpleDark.id -> {
-                    setTheme(Theme.PURPLE_DARK);
+                    setTheme(Theme.UNKNOWN);
                 }
                 radioWhite.id -> {
-                    setTheme(Theme.WHITE);
+                    setTheme(Theme.UNKNOWN_SECOND);
                 }
             }
         }

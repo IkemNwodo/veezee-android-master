@@ -45,8 +45,8 @@ class BrowseVerticalListAdapter(private val context: Context, private val list: 
             HomePageItem.GENRE -> gridLayoutManager(1, androidx.recyclerview.widget.GridLayoutManager.HORIZONTAL);
             HomePageItem.TRACK -> {
                 val tracksSize = list[position].trackList?.size!!;
-                gridLayoutManager(3, androidx.recyclerview.widget.GridLayoutManager.HORIZONTAL)
-                //gridLayoutManager(if (Constants.OFFLINE_ACCESS) { if(tracksSize < 4) tracksSize else 4  } else {3}, androidx.recyclerview.widget.GridLayoutManager.HORIZONTAL)
+                gridLayoutManager(3, androidx.recyclerview.widget.GridLayoutManager.VERTICAL)
+                //gridLayoutManager(if (Constants.OFFLINE_ACCESS) { if(tracksSize < 4) tracksSize else 4  } else {3}, androidx.recyclerview.widget.GridLayoutManager.VERTICAL)
             }
             HomePageItem.COMPACT_ALBUM -> linearLayoutManager(LinearLayoutManager.VERTICAL)
             else -> {
@@ -98,18 +98,18 @@ class BrowseVerticalListAdapter(private val context: Context, private val list: 
             val list = holder.itemsRecycler;
             val headerContainer = holder.headerContainer;
             val headerTitle = holder.title;
-            val moreResult = holder.moreResult;
+            //val moreResult = holder.moreResult;
 
             headerContainer.visibility = if (title == null) View.GONE else View.VISIBLE;
             headerTitle.text = title ?: "";
 
             if (type == HomePageItem.GENRE || type == HomePageItem.COMPACT_ALBUM) {
-                moreResult.visibility = View.GONE;
+                //moreResult.visibility = View.GONE;
             }
 
             initializeLists(holder.adapterPosition, list);
 
-            moreResult.setOnClickListener {
+           /** moreResult.setOnClickListener {
                 val newPosition = holder.adapterPosition;
 
                 val albumsTrackListIntent = Intent(context, AlbumsTrackListActivity::class.java);
@@ -123,14 +123,14 @@ class BrowseVerticalListAdapter(private val context: Context, private val list: 
                 albumsTrackListIntent.putExtra("type", type);
 
                 context.startActivity(albumsTrackListIntent);
-            }
+            } */
         }
     }
 
     inner class HomePageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val headerContainer: ConstraintLayout = itemView.findViewById(R.id.browse_header)!!;
         val title: TextView = itemView.findViewById(R.id.browse_header_title)!!;
-        val moreResult: TextView = itemView.findViewById(R.id.browse_header_more)!!;
+        //val moreResult: TextView = itemView.findViewById(R.id.browse_header_more)!!;
         val itemsRecycler: RecyclerView = itemView.findViewById(R.id.browse_horizontal_list)!!;
     }
 }

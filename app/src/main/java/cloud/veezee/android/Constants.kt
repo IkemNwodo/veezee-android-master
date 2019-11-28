@@ -33,7 +33,7 @@ class Constants {
                 SharedPreferencesHelper(App.instance).save("OFFLINE_ACCESS", value);
             };
 
-        var THEME = Theme.WHITE
+        var THEME = Theme.UNKNOWN
             set(value) {
                 field = value;
 
@@ -71,7 +71,7 @@ class Constants {
 }
 
 enum class Theme(val value: String) {
-    PURPLE_DARK("PURPLE_DARK"),
-    WHITE("WHITE"),
-    BLACK("BLACK")
+    UNKNOWN("UNKNOWN"),
+    UNKNOWN_SECOND("UNKNOWN_SECOND"),
+    UNKNOWN_THIRD("UNKNOWN_THIRD")
 }

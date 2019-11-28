@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="unknown_primary">#F96262</color>
+    <color name="unknown_primary_dark">#F96262</color>
+    <color name="unknown_accent">#E83223</color>
+    <color name="unknown_primary_text">#FFFFFF</color>
+    <color name="unknown_secondary_text">#000000</color>
+
+    <color name="unknown_second_primary">#13DDB5</color>
+    <color name="unknown_second_primary_dark">#13DDB5</color>
+    <color name="unknown_second_accent">#E83223</color>
+    <color name="unknown_second_primary_text">#FFFFFF</color>
+    <color name="unknown_second_secondary_text">#000000</color>
+
+    <color name="unknown_third_primary">#333333</color>
+    <color name="unknown_third_primary_dark">#333333</color>
+    <color name="unknown_third_accent">#E83223</color>
+    <color name="unknown_third_primary_text">#FFFFFF</color>
+    <color name="unknown_third_secondary_text">#F96262</color>
+
     <color name="purple_dark_primary">#170a2d</color>
     <color name="purple_dark_primary_dark">#170a2d</color>
     <color name="purple_dark_accent">#E83223</color>

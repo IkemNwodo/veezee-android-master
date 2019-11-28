@@ -103,7 +103,7 @@ class BrowseHorizontalListAdapter(private val context: Context, private val home
             is AlbumViewHolder -> {
                 val album = homePageItem.albumList?.get(position);
 
-                holder.title.text = album?.title
+               /** holder.title.text = album?.title
                 if (album?.artist != null) {
                     holder.artist.visibility = View.VISIBLE;
                     holder.artist.text = album.artist?.name;
@@ -113,7 +113,7 @@ class BrowseHorizontalListAdapter(private val context: Context, private val home
 
                 imageUrl = album?.image!!;
                 artWork = holder.artWork;
-
+               */
                 holder.container.setOnClickListener {
                     val albumActivity = Intent(context, AlbumActivity::class.java);
                     albumActivity.putExtra("album", Gson().toJson(album));
@@ -155,11 +155,11 @@ class BrowseHorizontalListAdapter(private val context: Context, private val home
             is TrackViewHolder -> {
                 val track = homePageItem.trackList?.get(position);
 
-                holder.title.text = track?.title;
-                holder.artist.text = track?.album?.artist?.name;
+                //holder.title.text = track?.title;
+                //holder.artist.text = track?.album?.artist?.name;
 
                 imageUrl = track?.image!!;
-                artWork = holder.artwork;
+                //artWork = holder.artwork;
 
                 holder.container.setOnClickListener {
                     val controller = AudioPlayer.getInstance().init(context);
@@ -242,13 +242,13 @@ class BrowseHorizontalListAdapter(private val context: Context, private val home
 
     inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var container: CardView = itemView.findViewById(R.id.album_item_container)!!;
-        val title: TextView = itemView.findViewById(R.id.album_item_title)!!;
-        val artWork: ImageView = itemView.findViewById(R.id.album_item_cover)!!;
-        val artist: TextView = itemView.findViewById(R.id.album_item_artist)!!;
+        //val title: TextView = itemView.findViewById(R.id.album_item_title)!!;
+        //val artWork: ImageView = itemView.findViewById(R.id.album_item_cover)!!;
+        //val artist: TextView = itemView.findViewById(R.id.album_item_artist)!!;
 
-        init {
-            artWork.clipToOutline = true;
-        }
+        //init {
+        //    artWork.clipToOutline = true;
+        //}
     }
 
     inner class GenreViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -263,13 +263,13 @@ class BrowseHorizontalListAdapter(private val context: Context, private val home
 
     inner class TrackViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var container: CardView = itemView.findViewById(R.id.track_item_home_container)!!;
-        val title: TextView = itemView.findViewById(R.id.track_item_title)!!;
-        val artwork: ImageView = itemView.findViewById(R.id.track_item_cover)!!;
-        val artist: TextView = itemView.findViewById(R.id.track_item_artist)!!;
+        //val title: TextView = itemView.findViewById(R.id.track_item_title)!!;
+        //val artwork: ImageView = itemView.findViewById(R.id.track_item_cover)!!;
+        //val artist: TextView = itemView.findViewById(R.id.track_item_artist)!!;
 
-        init {
-            artwork.clipToOutline = true;
-        }
+        //init {
+        //    artwork.clipToOutline = true;
+        //}
     }
 
     inner class CompactAlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

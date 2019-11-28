@@ -48,8 +48,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\IYCOMO\AndroidStudioProjects\veezee-android-master\app\src\main\res\drawable\logo.xml" />
-                                      <entry key="outputName" value="ic_logo" />
+                                      <entry key="imageAsset" value="C:\Users\IYCOMO\Pictures\android\logo type\drawable-xxxhdpi\Artboard ÔÇô 4.png" />
+                                      <entry key="outputName" value="ic_logo_name" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="000000" />
                                     </map>
@@ -167,12 +167,27 @@
                   <entry key="vectorAssetStep">
                     <value>
                       <PersistentState>
+                        <option name="children">
+                          <map>
+                            <entry key="clipartAsset">
+                              <value>
+                                <PersistentState>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio1/plugins/android/lib/android.jar!/images/material_design_icons/av/ic_pause_black_24dp.xml" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="autoMirrored" value="true" />
-                            <entry key="outputName" value="logo_name" />
-                            <entry key="sourceFile" value="C:\Users\IYCOMO\AndroidStudioProjects\veezee-android-master\app\src\main\res\raw\logo.svg" />
+                            <entry key="outputName" value="ic_newtracks" />
+                            <entry key="sourceFile" value="C:\Users\IYCOMO\AndroidStudioProjects\veezee-android-master\app\src\main\res\raw\newtracks.svg" />
                           </map>
                         </option>
                       </PersistentState>

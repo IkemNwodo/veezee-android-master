@@ -5,7 +5,6 @@
     android:id="@+id/panel_child"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F96262"
     android:clickable="true"
     android:focusable="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -41,7 +40,7 @@
         android:id="@+id/bottom_player_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/transparent"
+        android:background="@color/white"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/bottom_player_guideline"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -52,16 +51,15 @@
             android:id="@+id/bottom_player_controller_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginLeft="25dp"
             android:layout_weight="1"
             android:padding="8dp">
 
             <ImageView
                 android:id="@+id/bottom_player_controller_prev"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="2dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="audioPrev"
@@ -70,7 +68,8 @@
                 app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/bottom_player_controller_play"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <ImageView
                 android:id="@+id/bottom_player_controller_play"
@@ -88,8 +87,8 @@
 
             <ImageView
                 android:id="@+id/bottom_player_controller_pause"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="audioPause"
@@ -102,17 +101,19 @@
 
             <ImageView
                 android:id="@+id/bottom_player_controller_next"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="2dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="audioNext"
+                android:scaleType="fitCenter"
                 android:src="@drawable/ic_ios_fastforward"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/bottom_player_controller_play"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -133,7 +134,7 @@
                 android:background="@null"
                 android:clickable="true"
                 android:focusable="true"
-                android:progressBackgroundTint="?attr/primaryText"
+                android:progressBackgroundTint="?colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -141,14 +142,14 @@
 
             <TextView
                 android:id="@+id/bottom_player_title"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
                 android:ellipsize="end"
-                android:gravity="center"
-                android:maxWidth="270dp"
+                android:gravity="start"
+                android:maxWidth="150sp"
                 android:maxLines="1"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="12sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -236,7 +237,7 @@
                 android:background="@null"
                 android:clickable="true"
                 android:focusable="true"
-                android:progressBackgroundTint="?attr/primaryText"
+                android:progressBackgroundTint="?attr/colorSeeker"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -249,7 +250,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="2dp"
                 android:text="00:00"
-                android:textColor="?attr/primaryText"
+                android:textColor="?attr/secondaryText"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/player_seek" />
@@ -261,7 +262,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="15dp"
                 android:text="00:00"
-                android:textColor="?attr/primaryText"
+                android:textColor="?attr/secondaryText"
                 android:textSize="12sp"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/player_seek" />

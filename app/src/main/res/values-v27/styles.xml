@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="PurpleDark" parent="AppTheme">
+    <style name="Unknown" parent="AppTheme">
+        <item name="colorPrimary">@color/unknown_primary</item>
+        <item name="colorPrimaryDark">@color/unknown_primary_dark</item>
+        <item name="colorAccent">@color/unknown_accent</item>
+        <item name="primaryText">@color/unknown_primary_text</item>
+        <item name="secondaryText">@color/unknown_secondary_text</item>
+        <item name="android:navigationBarColor">@color/unknown_primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="colorRoundedDrawable">@color/white</item>
+        <item name="colorPlayerController">@color/black</item>
+        <item name="colorLogo">?secondaryText</item>
+        <item name="colorSeeker">?primaryText</item>
+    </style>
+
+    <style name="UnknownSecond" parent="AppTheme">
+        <item name="colorPrimary">@color/unknown_second_primary</item>
+        <item name="colorPrimaryDark">@color/unknown_second_primary_dark</item>
+        <item name="colorAccent">@color/unknown_second_accent</item>
+        <item name="primaryText">@color/unknown_second_primary_text</item>
+        <item name="secondaryText">@color/unknown_second_secondary_text</item>
+        <item name="android:navigationBarColor">@color/unknown_second_primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="colorRoundedDrawable">@color/unknown_second_primary</item>
+        <item name="colorPlayerController">?primaryText</item>
+        <item name="colorLogo">?primaryText</item>
+        <item name="colorSeeker">?secondaryText</item>
+    </style>
+
+    <style name="UnknownThird" parent="AppTheme">
+        <item name="colorPrimary">@color/unknown_third_primary</item>
+        <item name="colorPrimaryDark">@color/unknown_third_primary_dark</item>
+        <item name="colorAccent">@color/unknown_third_accent</item>
+        <item name="primaryText">@color/unknown_third_primary_text</item>
+        <item name="secondaryText">@color/unknown_third_secondary_text</item>
+        <item name="android:navigationBarColor">@color/unknown_third_primary</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="colorRoundedDrawable">@color/unknown_second_primary</item>
+        <item name="colorPlayerController">?primaryText</item>
+        <item name="colorLogo">@color/unknown_second_primary</item>
+        <item name="colorSeeker">@color/unknown_second_primary</item>
+    </style>
+
+   <!-- <style name="PurpleDark" parent="AppTheme">
         <item name="colorPrimary">@color/purple_dark_primary</item>
         <item name="colorPrimaryDark">@color/purple_dark_primary_dark</item>
         <item name="colorAccent">@color/purple_dark_accent</item>
@@ -28,5 +70,5 @@
         <item name="secondaryText">@color/white_secondary_text</item>
         <item name="android:navigationBarColor">@color/white</item>
         <item name="android:windowLightNavigationBar">true</item>
-    </style>
+    </style> -->
 </resources>

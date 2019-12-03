@@ -23,16 +23,17 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="end"
                 android:gravity="left"
                 android:layoutDirection="ltr"
                 android:textDirection="ltr"
-                app:contentInsetStartWithNavigation="0dp"
-                app:titleMarginStart="0dp"
                 app:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:layout_scrollFlags="scroll|enterAlways" />
+                app:titleMarginStart="0dp" />
 
             <ImageView
                 android:id="@+id/logotype"

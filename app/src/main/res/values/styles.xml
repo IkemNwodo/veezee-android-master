@@ -81,11 +81,7 @@
 
 
     <style name="White" parent="AppTheme">
-        <item name="colorPrimary">@color/white_primary</item>
-        <item name="colorPrimaryDark">@color/white_primary_dark</item>
-        <item name="colorAccent">@color/white_accent</item>
-        <item name="primaryText">@color/white_primary_text</item>
-        <item name="secondaryText">@color/white_secondary_text</item>
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
     <style name="splash" parent="Black">

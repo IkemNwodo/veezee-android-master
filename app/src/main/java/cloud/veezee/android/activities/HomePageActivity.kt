@@ -4,29 +4,21 @@ import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.UserManager
-import kotlinx.android.synthetic.main.activity_home_page_content.*
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import android.view.*
+import android.view.KeyEvent
+import android.view.LayoutInflater
 import android.widget.Button
-import com.miguelcatalan.materialsearchview.MaterialSearchView
-import com.sothree.slidinguppanel.SlidingUpPanelLayout
+import androidx.fragment.app.Fragment
+import cloud.veezee.android.Constants
+import cloud.veezee.android.R
 import cloud.veezee.android.externalComponentsAndLibs.NonSwipeableViewPager
 import cloud.veezee.android.fragments.AccountFragment
 import cloud.veezee.android.fragments.BrowseFragment
 import cloud.veezee.android.fragments.SearchFragment
-import cloud.veezee.android.utils.hideKeyboard
 import cloud.veezee.android.utils.mkDirs
+import com.miguelcatalan.materialsearchview.MaterialSearchView
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_home_page.*
-import com.google.android.material.tabs.TabLayout
-import android.util.AttributeSet
-import android.widget.ImageView
-import android.widget.TextView
-import cloud.veezee.android.Constants
-import cloud.veezee.android.application.App
-import cloud.veezee.android.R;
+import kotlinx.android.synthetic.main.activity_home_page_content.*
 
 class HomePageActivity : BaseActivity() {
 

@@ -1,6 +1,7 @@
 package cloud.veezee.android.application
 
 import android.app.Application
+import cloud.veezee.android.R
 import io.fabric.sdk.android.Fabric
 import com.crashlytics.android.Crashlytics
 import com.crashlytics.android.answers.Answers
@@ -23,6 +24,7 @@ class App : Application() {
     }
 
     override fun onCreate() {
+        setTheme(R.style.White)
         super.onCreate();
         instance = this;
 

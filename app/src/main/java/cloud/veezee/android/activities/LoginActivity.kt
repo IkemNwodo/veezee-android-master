@@ -94,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private var logoAnimationListener = object : Animation.AnimationListener {
+    /**private var logoAnimationListener = object : Animation.AnimationListener {
         override fun onAnimationRepeat(animation: Animation?) {
 
         }
@@ -123,14 +123,14 @@ class LoginActivity : AppCompatActivity() {
         override fun onAnimationStart(animation: Animation?) {
 
         }
-    };
+    }; */
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_content);
 
-        val guestLogin = findViewById<TextView>(R.id.guest_login);
+        val guestLogin = findViewById<Button>(R.id.guest_login);
         guestLogin.setOnClickListener {
             logout();
             Constants.GUEST_MODE = true;
@@ -150,7 +150,7 @@ class LoginActivity : AppCompatActivity() {
             return;
         }
 
-        blinkerAnimation(logo);
+        //blinkerAnimation(logo);
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -179,10 +179,10 @@ class LoginActivity : AppCompatActivity() {
         root = login_root;
         logo = login_logo;
         mainLoading = validate_loading;
-        logoContainer = logo_container;
-        loginButton = login_button;
+        //logoContainer = logo_container;
+        //loginButton = login_button;
         registerButton = register_button;
-        googleButton = login_google_button;
+       // googleButton = login_google_button;
         retryButton = retry_button;
         loginContainer = login_container;
         offlineButton = offline_button;
@@ -193,7 +193,7 @@ class LoginActivity : AppCompatActivity() {
             redirectToMainPage(800);
         } else {
             logout();
-            entryAnimation(800);
+            //entryAnimation(800);
             offlineButton?.visibility = View.INVISIBLE;
             retryButton?.visibility = View.INVISIBLE;
         }
@@ -419,11 +419,11 @@ class LoginActivity : AppCompatActivity() {
     /**
      * Logo blinker animation
      */
-    private fun blinkerAnimation(view: View?) {
+    /**private fun blinkerAnimation(view: View?) {
         val blinker = AnimationUtils.loadAnimation(context, R.anim.blink_animation);
         blinker?.setAnimationListener(logoAnimationListener);
         view?.startAnimation(blinker);
-    }
+    }*/
 
     /**
      *
@@ -444,19 +444,19 @@ class LoginActivity : AppCompatActivity() {
                 logoContainer?.layoutParams?.height = logoContainerHeight;
                 logoContainer?.requestLayout();
 
-                logo?.animate()?.translationY(((rootHeight / 2) - (logoHeight / 4) - extraSpace - statusBarHeight).toFloat() * -1)
-                        ?.scaleY(0.5f)
-                        ?.scaleX(0.5f)
-                        ?.setDuration(duration)?.interpolator = AccelerateInterpolator();
+                //logo?.animate()?.translationY(((rootHeight / 2) - (logoHeight / 4) - extraSpace - statusBarHeight).toFloat() * -1)
+                  //      ?.scaleY(0.5f)
+                  //      ?.scaleX(0.5f)
+                    //    ?.setDuration(duration)?.interpolator = AccelerateInterpolator();
 
 //                logoContainer?.animate()?.translationY(toFloat(logoContainerHeight))
 //                        ?.setDuration(duration)?.interpolator = AccelerateInterpolator();
 //
-                loginContainer?.animate()?.alpha(1f)
+                /**loginContainer?.animate()?.alpha(1f)
                         ?.setDuration(duration)
                         ?.setStartDelay(duration / 2)
                         ?.setListener(loginContainerAnimationListener)
-                        ?.start();
+                        ?.start(); */
             }
 
             override fun onTick(millisUntilFinished: Long) {

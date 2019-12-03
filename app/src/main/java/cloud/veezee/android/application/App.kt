@@ -24,7 +24,6 @@ class App : Application() {
     }
 
     override fun onCreate() {
-        setTheme(R.style.White)
         super.onCreate();
         instance = this;
 

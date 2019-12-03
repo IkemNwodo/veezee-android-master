@@ -17,4 +17,6 @@
     <string name="request_failed">Something went wrong. Try again later.</string>
     <string name="expired">Your account is expired</string>
     <string name="title_activity_albums_track_list">AlbumsTrackListActivity</string>
+    <string name="signup_button_desc">To Build Your Playlists And Find Music of Your Taste</string>
+    <string name="guest_button_desc">Listen And Search Music only</string>
 </resources>

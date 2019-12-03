@@ -175,7 +175,7 @@ class HomePageActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
 
         myAppbarLayout = homePage_app_bar_layout;
         root = home_page_root;

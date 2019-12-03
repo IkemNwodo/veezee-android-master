@@ -128,6 +128,11 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (SharedPreferencesHelper(this).exist("GUEST_MODE") && SharedPreferencesHelper(this).getBoolean("GUEST_MODE", true)){
+            startActivity(Intent(this, HomePageActivity::class.java));
+            finish();
+        }
         setContentView(R.layout.activity_login_content);
 
         val guestLogin = findViewById<Button>(R.id.guest_login);
@@ -184,7 +189,7 @@ class LoginActivity : AppCompatActivity() {
         registerButton = register_button;
        // googleButton = login_google_button;
         retryButton = retry_button;
-        loginContainer = login_container;
+        //loginContainer = login_container;
         offlineButton = offline_button;
     }
 

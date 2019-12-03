@@ -80,12 +80,10 @@
     </style>
 
 
-    <style name="White" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/splash</item>
-    </style>
 
-    <style name="splash" parent="Black">
-        <item name="android:windowDisablePreview">true</item>
+    <style name="splash" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

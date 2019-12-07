@@ -7,8 +7,8 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:actionMenuTextColor">?attr/primaryText</item>
-        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <item name="android:windowContentTransitions">true</item>
+    <!--<item name="android:windowTranslucentNavigation">true</item>-->
         <!--<item name="android:navigationBarColor">@color/black_accent</item>-->
         <!--<item name="windowActionBarOverlay">true</item>-->
     </style>
@@ -83,7 +83,6 @@
 
     <style name="splash" parent="AppTheme">
         <item name="android:windowBackground">@drawable/splash</item>
-        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -105,4 +104,21 @@
         <item name="android:trackTint" tools:targetApi="m">@color/gray_light</item>
     </style>
 
+    <style name="MaterialSearchViewStyle">
+        <!-- Background for the search bar -->
+        <item name="searchBackground">@color/accent</item>
+
+        <!-- Change clear text icon -->
+        <item name="searchCloseIcon">@drawable/ic_close</item>
+
+        <!-- Change up icon -->
+        <item name="searchBackIcon">@drawable/ic_arrow_back</item>
+
+        <!-- Change text color for edit text. This will also be the color of the cursor -->
+        <item name="android:textColor">@color/black</item>
+
+        <!-- Change hint text color for edit text -->
+        <item name="android:textColorHint">@color/black</item>
+
+    </style>
 </resources>

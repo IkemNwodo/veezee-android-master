@@ -2,18 +2,21 @@ package cloud.veezee.android.activities
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.KeyEvent
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import cloud.veezee.android.Constants
 import cloud.veezee.android.R
 import cloud.veezee.android.externalComponentsAndLibs.NonSwipeableViewPager
-import cloud.veezee.android.fragments.AccountFragment
-import cloud.veezee.android.fragments.BrowseFragment
-import cloud.veezee.android.fragments.SearchFragment
+import cloud.veezee.android.fragments.*
 import cloud.veezee.android.utils.mkDirs
 import com.miguelcatalan.materialsearchview.MaterialSearchView
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -33,9 +36,6 @@ class HomePageActivity : BaseActivity() {
     var tabLayoutHeight: Int = 0;
     private var lastFragmentSelected: Fragments = Fragments.BROWSE;
     private var TAG = "HomePageActivity";
-
-    private var materialSearchView: MaterialSearchView? = null;
-    private var viewPagerContainer: NonSwipeableViewPager? = null;
 
     //callbacks
 //    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -67,24 +67,6 @@ class HomePageActivity : BaseActivity() {
 //        false
 //    }
 
-    private val materialSearchViewListeners = object : MaterialSearchView.SearchViewListener {
-        override fun onSearchViewClosed() {
-            viewPagerContainer?.setItem(lastFragmentSelected, false);
-        }
-
-        override fun onSearchViewShown() {
-        }
-    }
-
-    private fun getFragment(index: HomePageActivity.Fragments): Fragment {
-
-        return when (index) {
-            Fragments.BROWSE -> BrowseFragment();
-            Fragments.SEARCH -> SearchFragment();
-            Fragments.ACCOUNT -> AccountFragment();
-        }
-    }
-
 //    private fun replaceFragment(fragment: HomePageActivity.Fragments) {
 //
 //        viewPagerContainer?.setItem(fragment, false);
@@ -104,18 +86,6 @@ class HomePageActivity : BaseActivity() {
             //navigation.selectedItemId = R.id.navigation_account;
             createDialog.dismiss();
         };
-    }
-
-    private fun NonSwipeableViewPager.setItem(item: Fragments, smoothScroll: Boolean = true) {
-        var index = -1;
-
-        index = when (item) {
-            Fragments.BROWSE -> 0;
-            Fragments.SEARCH -> 1;
-            Fragments.ACCOUNT -> 2;
-        };
-
-        viewPagerContainer?.setCurrentItem(index, smoothScroll);
     }
 
    /** private fun makeTabLayout() {
@@ -199,8 +169,6 @@ class HomePageActivity : BaseActivity() {
         //viewPagerContainer?.offscreenPageLimit = 3;
         //viewPagerContainer?.adapter = ViewPagerAdapter(supportFragmentManager);
 
-        materialSearchView = homePage_material_searchView;
-        materialSearchView?.setOnSearchViewListener(materialSearchViewListeners);
 
         //tab_layout?.setupWithViewPager(viewPagerContainer);
         //makeTabLayout();
@@ -261,6 +229,24 @@ class HomePageActivity : BaseActivity() {
             }
 
         return super.onKeyDown(keyCode, event);
+    }
+
+    fun fragmentNext(view: View) {
+
+        when (view.id) {
+            R.id.setting -> {
+                val settingActivity = Intent(context, SettingActivity::class.java);
+                startActivity(settingActivity);
+            }
+            R.id.login -> {
+                Constants.GUEST_MODE = null;
+                val loginActivity = Intent(context, LoginActivity::class.java);
+                startActivity(loginActivity);
+            }
+            R.id.search_menu -> {
+                startActivity(Intent(context, SearchActivity::class.java))
+            }
+        }
     }
 
     /**inner class ViewPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {

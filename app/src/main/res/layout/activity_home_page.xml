@@ -31,16 +31,6 @@
                 android:layout_marginTop="5dp"
                 android:src="@drawable/logo_name" />
 
-            <com.miguelcatalan.materialsearchview.MaterialSearchView
-                android:id="@+id/homePage_material_searchView"
-                app:searchBackground="?attr/colorPrimary"
-                android:textColor="?attr/primaryText"
-                android:textColorHint="?attr/secondaryText"
-                app:searchBackIcon="@drawable/ic_arrow_back"
-                app:searchCloseIcon="@drawable/ic_close"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
         </FrameLayout>
 
         <LinearLayout
@@ -49,19 +39,29 @@
             android:layout_gravity="end"
             android:layout_marginEnd="8dp"
             android:orientation="horizontal"
-            android:background="@drawable/rounded_options_menu">
+            android:background="@drawable/rounded_options_menu"
+            android:padding="5dp">
             <ImageView
+                android:id="@+id/setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_settings"/>
+                android:src="@drawable/ic_settings"
+                android:onClick="fragmentNext"
+                android:background="?android:attr/selectableItemBackground"/>
             <ImageView
+                android:id="@+id/search_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_search_24dp"/>
+                android:src="@drawable/ic_search_24dp"
+                android:onClick="fragmentNext"
+                android:background="?android:attr/selectableItemBackground"/>
             <ImageView
+                android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_person_24dp"/>
+                android:src="@drawable/ic_person_24dp"
+                android:onClick="fragmentNext"
+                android:background="?android:attr/selectableItemBackground"/>
         </LinearLayout>
         <!--<com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"

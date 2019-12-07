@@ -22,6 +22,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".activities.SearchActivity"
+            android:theme="@style/Unknown"/>
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -78,7 +81,6 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/splash" />
-
     </application>
 
 </manifest>

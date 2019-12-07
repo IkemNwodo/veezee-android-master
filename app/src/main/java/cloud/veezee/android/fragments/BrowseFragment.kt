@@ -7,6 +7,9 @@ import android.view.*
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import cloud.veezee.android.Constants
 import cloud.veezee.android.R
 import cloud.veezee.android.activities.LoginActivity
@@ -90,7 +93,7 @@ class BrowseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View? = inflater.inflate(R.layout.fragment_browse, container, false);
-        setHasOptionsMenu(true);
+        //setHasOptionsMenu(true);
 
         browseList = view?.findViewById(R.id.browse_list);
         loading = view?.findViewById(R.id.browse_loading);
@@ -117,8 +120,8 @@ class BrowseFragment : Fragment() {
 
         return view;
     }
-
-    override fun onPrepareOptionsMenu(menu: Menu?) {
+    
+    /**override fun onPrepareOptionsMenu(menu: Menu?) {
         super.onPrepareOptionsMenu(menu);
 
         try {
@@ -129,16 +132,8 @@ class BrowseFragment : Fragment() {
         } catch (ignored: Exception) { }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
-        super.onCreateOptionsMenu(menu, inflater);
-
-        inflater?.inflate(R.menu.browse_fragment_menu, menu);
-    }
-
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item?.itemId;
-
-        when (id) {
+        when (item?.itemId) {
             R.id.setting -> {
                 val settingActivity = Intent(context, SettingActivity::class.java);
                 startActivity(settingActivity);
@@ -151,7 +146,7 @@ class BrowseFragment : Fragment() {
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    } */
 
    /** inner class RecyclerViewCustomScrollListener(tabHeight: Int) : HidingScrollListener(tabHeight) {
         override fun onShow() {
